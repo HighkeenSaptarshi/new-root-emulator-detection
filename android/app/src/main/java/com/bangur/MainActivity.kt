@@ -1,9 +1,16 @@
-package com.bangur
+package com.shree.bangur
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Process;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 class MainActivity : ReactActivity() {
 
