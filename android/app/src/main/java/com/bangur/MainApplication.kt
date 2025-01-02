@@ -1,6 +1,7 @@
 package com.shree.bangur
 
 import android.app.Application
+import com.bangur.SSLPinningPackage
 import com.bangur.SecurityService.SecurityServicePackage
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
@@ -11,7 +12,6 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.flipper.ReactNativeFlipper
-import com.facebook.react.modules.network.OkHttpClientProvider
 import com.facebook.soloader.SoLoader
 import com.rnfs.RNFSPackage
 
@@ -26,6 +26,7 @@ class MainApplication : Application(), ReactApplication {
                       // add(MyReactNativePackage())
                       RNFSPackage()
                       add(SecurityServicePackage()) // Register SecurityServicePackage manually here
+                      add(SSLPinningPackage())
                     }
 
             override fun getJSMainModuleName(): String = "index"
@@ -47,6 +48,6 @@ class MainApplication : Application(), ReactApplication {
       load()
     }
     ReactNativeFlipper.initializeFlipper(this, reactNativeHost.reactInstanceManager)
-    OkHttpClientProvider.setOkHttpClientFactory(SSLPinningFactory())
+    // OkHttpClientProvider.setOkHttpClientFactory(SSLPinningFactory())
   }
 }

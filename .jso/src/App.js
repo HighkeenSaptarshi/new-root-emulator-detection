@@ -12,10 +12,7 @@
   var _reactNative = _$$_REQUIRE(_dependencyMap[7]);
   var _Splash = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8]));
   var _Intro = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9]));
-  var _Config = _$$_REQUIRE(_dependencyMap[10]);
-  var _reactNativeSslPinning = _$$_REQUIRE(_dependencyMap[11]);
-  var _reactNativeSslPublicKeyPinning = _$$_REQUIRE(_dependencyMap[12]);
-  var _jsxRuntime = _$$_REQUIRE(_dependencyMap[13]);
+  var _jsxRuntime = _$$_REQUIRE(_dependencyMap[10]);
   function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
   function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
   /**
@@ -25,6 +22,11 @@
    * @format
    */
 
+  // import {fetch} from 'react-native-ssl-pinning';
+  // import {
+  //   initializeSslPinning,
+  //   addSslPinningErrorListener,
+  // } from 'react-native-ssl-public-key-pinning';
   // import {useFreeRasp} from 'freerasp-react-native';
   var Stack = (0, _stack.createStackNavigator)();
   var Drawer = (0, _drawer.createDrawerNavigator)();
@@ -35,17 +37,6 @@
         try {
           var isRootedNative = yield SecurityServiceManager.isDeviceRooted();
           var isEmulatorNative = yield SecurityServiceManager.isEmulator();
-          if (isRootedNative || isEmulatorNative) {
-            _reactNative.Alert.alert('Security Alert', `The app cannot run on rooted devices or emulators.`, [{
-              text: 'OK',
-              onPress: function onPress() {
-                return _reactNative.BackHandler.exitApp();
-              }
-            }]);
-            return;
-          } else {
-            console.log('INSIDE ELSE PART');
-          }
         } catch (error) {
           console.error('Error checking root or emulator status:', error);
         }
@@ -68,46 +59,92 @@
     });
 
     //SSL Pinning
-    var getDataSSL = function getDataSSL() {
-      (0, _reactNativeSslPinning.fetch)(`${_Config.URL}`, {
-        method: 'GET',
-        timeoutInterval: 10000,
-        // milliseconds
-        // your certificates array (needed only in android) ios will pick it automatically
-        pkPinning: true,
-        sslPinning: {
-          certs: ['sha256/HYVBbIEdyjkQhisEE7VP4VzVN//qb+kLy96tAtrzFLY=', 'sha256/SDG5orEv8iX6MNenIAxa8nQFNpROB/6+llsZdXHZNqs=', 'sha256/i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY=']
-        },
-        headers: {
-          Accept: 'application/json; charset=utf-8',
-          'Access-Control-Allow-Origin': '*',
-          e_platform: 'mobile'
-        }
-      }).then(function (response) {
-        console.log(`response received ${response}`);
-        console.log("Data:: ", response);
-      }).catch(function (err) {
-        console.log(`error: ${err}`);
-      });
-    };
+    // const getDataSSL = () => {
+    //   fetch(`${URL}`, {
+    //     method: 'GET',
+    //     timeoutInterval: 10000, // milliseconds
+    //     // your certificates array (needed only in android) ios will pick it automatically
+    //     pkPinning: true,
+    //     sslPinning: {
+    //       certs: [
+    //         'sha256/HYVBbIEdyjkQhisEE7VP4VzVN//qb+kLy96tAtrzFLY=',
+    //         'sha256/SDG5orEv8iX6MNenIAxa8nQFNpROB/6+llsZdXHZNqs=',
+    //         'sha256/i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY=',
+    //       ],
+    //     },
+    //     headers: {
+    //       Accept: 'application/json; charset=utf-8',
+    //       'Access-Control-Allow-Origin': '*',
+    //       e_platform: 'mobile',
+    //     },
+    //   })
+    //     .then(response => {
+    //       console.log(`response received ${response}`);
+    //       console.log("Data:: ", response);
+
+    //     })
+    //     .catch(err => {
+    //       console.log(`error: ${err}`);
+    //     });
+    // };
+
+    // const getData = async () => {
+    //   await fetch(URL, {
+    //     headers: {
+    //       Accept: 'application/json; charset=utf-8',
+    //       'Access-Control-Allow-Origin': '*',
+    //       e_platform: 'mobile',
+    //     },
+    //   })
+    //   .then((res:any)=>{
+    //     console.log("DATAAA:: ", res);
+
+    //   })
+    //   .catch((err:any) => {
+    //     console.log("ERROR",err);
+
+    //   })
+    // };
+
     (0, _react.useEffect)(function () {
-      getDataSSL();
+      // getDataSSL();
+      // getData();
+      var testSSL = /*#__PURE__*/function () {
+        var _ref2 = (0, _asyncToGenerator2.default)(function* () {
+          try {
+            var response = yield _reactNative.NativeModules.SSLPinning.makeRequest('https://apisheecementuat.mjunction.in');
+            console.log('Response:', response);
+          } catch (error) {
+            console.error('SSL Pinning Error:', error);
+          }
+        });
+        return function testSSL() {
+          return _ref2.apply(this, arguments);
+        };
+      }();
+      testSSL();
     }, []);
-    (0, _react.useEffect)(function () {
-      (0, _reactNativeSslPublicKeyPinning.initializeSslPinning)({
-        'apisheecementuat.mjunction.in': {
-          includeSubdomains: true,
-          publicKeyHashes: ['HYVBbIEdyjkQhisEE7VP4VzVN//qb+kLy96tAtrzFLY=', 'SDG5orEv8iX6MNenIAxa8nQFNpROB/6+llsZdXHZNqs=', 'i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY=']
-        }
-      });
-      var subscription = (0, _reactNativeSslPublicKeyPinning.addSslPinningErrorListener)(function (error) {
-        // Triggered when an SSL pinning error occurs due to pin mismatch
-        console.log('Invalid Request.' + error.message);
-      });
-      return function () {
-        subscription.remove();
-      };
-    }, []);
+
+    // useEffect(() => {
+    //   initializeSslPinning({
+    //     'apisheecementuat.mjunction.in': {
+    //       includeSubdomains: true,
+    //       publicKeyHashes: [
+    //         'HYVBbIEdyjkQhisEE7VP4VzVN//qb+kLy96tAtrzFLY=',
+    //         'SDG5orEv8iX6MNenIAxa8nQFNpROB/6+llsZdXHZNqs=',
+    //         'i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY=',
+    //       ],
+    //     },
+    //   });
+    //   const subscription = addSslPinningErrorListener(error => {
+    //     // Triggered when an SSL pinning error occurs due to pin mismatch
+    //     console.log('Invalid Request.' + error.message);
+    //   });
+
+    //   return () => {
+    //     subscription.remove();
+    //   };
+    // }, []);
 
     // const config = {
     //   androidConfig: {

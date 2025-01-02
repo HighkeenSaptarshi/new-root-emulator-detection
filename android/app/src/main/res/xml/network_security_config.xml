@@ -4,6 +4,8 @@
         <domain includeSubdomains="true">apisheecementuat.mjunction.in</domain>
         <pin-set expiration="2025-04-01">
             <pin digest="SHA-256">HYVBbIEdyjkQhisEE7VP4VzVN//qb+kLy96tAtrzFLY=</pin>
+            <pin digest="SHA-256">SDG5orEv8iX6MNenIAxa8nQFNpROB/6+llsZdXHZNqs=</pin>
+            <pin digest="SHA-256">i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY=</pin>
         </pin-set>
           <trust-anchors>
             <certificates src="@raw/mj"/>

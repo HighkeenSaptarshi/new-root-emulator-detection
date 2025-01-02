@@ -27,11 +27,11 @@ import {hashKey, URL} from './auth_provider/Config';
 
 import {NativeModules} from 'react-native';
 
-import {fetch} from 'react-native-ssl-pinning';
-import {
-  initializeSslPinning,
-  addSslPinningErrorListener,
-} from 'react-native-ssl-public-key-pinning';
+// import {fetch} from 'react-native-ssl-pinning';
+// import {
+//   initializeSslPinning,
+//   addSslPinningErrorListener,
+// } from 'react-native-ssl-public-key-pinning';
 // import {useFreeRasp} from 'freerasp-react-native';
 
 const Stack = createStackNavigator();
@@ -46,8 +46,8 @@ const App = () => {
       let isEmulatorNative = await SecurityServiceManager.isEmulator();
 
       if (
-        // isRootedNative || isEmulatorNative
-      false
+        isRootedNative || isEmulatorNative
+      // false
       ) {
         Alert.alert(
           'Security Alert',
@@ -81,34 +81,34 @@ const App = () => {
   });
 
   //SSL Pinning
-  const getDataSSL = () => {
-    fetch(`${URL}`, {
-      method: 'GET',
-      timeoutInterval: 10000, // milliseconds
-      // your certificates array (needed only in android) ios will pick it automatically
-      pkPinning: true,
-      sslPinning: {
-        certs: [
-          'sha256/HYVBbIEdyjkQhisEE7VP4VzVN//qb+kLy96tAtrzFLY=',
-          'sha256/SDG5orEv8iX6MNenIAxa8nQFNpROB/6+llsZdXHZNqs=',
-          'sha256/i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY=',
-        ],
-      },
-      headers: {
-        Accept: 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': '*',
-        e_platform: 'mobile',
-      },
-    })
-      .then(response => {
-        console.log(`response received ${response}`);
-        console.log("Data:: ", response);
+  // const getDataSSL = () => {
+  //   fetch(`${URL}`, {
+  //     method: 'GET',
+  //     timeoutInterval: 10000, // milliseconds
+  //     // your certificates array (needed only in android) ios will pick it automatically
+  //     pkPinning: true,
+  //     sslPinning: {
+  //       certs: [
+  //         'sha256/HYVBbIEdyjkQhisEE7VP4VzVN//qb+kLy96tAtrzFLY=',
+  //         'sha256/SDG5orEv8iX6MNenIAxa8nQFNpROB/6+llsZdXHZNqs=',
+  //         'sha256/i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY=',
+  //       ],
+  //     },
+  //     headers: {
+  //       Accept: 'application/json; charset=utf-8',
+  //       'Access-Control-Allow-Origin': '*',
+  //       e_platform: 'mobile',
+  //     },
+  //   })
+  //     .then(response => {
+  //       console.log(`response received ${response}`);
+  //       console.log("Data:: ", response);
 
-      })
-      .catch(err => {
-        console.log(`error: ${err}`);
-      });
-  };
+  //     })
+  //     .catch(err => {
+  //       console.log(`error: ${err}`);
+  //     });
+  // };
 
   // const getData = async () => {
   //   await fetch(URL, {
@@ -129,8 +129,20 @@ const App = () => {
   // };
 
   useEffect(() => {
-    getDataSSL();
-    // getData()
+    // getDataSSL();
+    // getData();
+    const testSSL = async () => {
+      try {
+        const response = await NativeModules.SSLPinning.makeRequest(
+          'https://apisheecementuat.mjunction.in'
+        );
+        console.log('Response:', response);
+      } catch (error) {
+        console.error('SSL Pinning Error:', error);
+      }
+    };
+
+    testSSL();
   }, []);
 
   // useEffect(() => {
