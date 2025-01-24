@@ -120,9 +120,9 @@ class SecurityServiceManager(reactContext: ReactApplicationContext) :
                         Build.HARDWARE == "vbox86" ||
                         Build.PRODUCT == "sdk_x86" ||
                         Build.PRODUCT == "vbox86p" ||
-                        (Build.HARDWARE.toLowerCase().contains("nox") && !Build.HARDWARE.toLowerCase().contains("knox")) ||
-                        (Build.PRODUCT.toLowerCase().contains("nox") && !Build.PRODUCT.toLowerCase().contains("knox")) ||
-                        (Build.BOARD.toLowerCase().contains("nox") && !Build.BOARD.toLowerCase().contains("knox")) ||
+                        Build.HARDWARE.toLowerCase().contains("nox") ||
+                        Build.PRODUCT.toLowerCase().contains("nox") ||
+                        Build.BOARD.toLowerCase().contains("nox") ||
                         Build.PRODUCT == "sdk_gphone64_arm64")
 
         promise.resolve(isEmulator)
