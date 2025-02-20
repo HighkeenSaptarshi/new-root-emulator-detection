@@ -37,10 +37,10 @@
         try {
           var isRootedNative = yield SecurityServiceManager.isDeviceRooted();
           var isEmulatorNative = yield SecurityServiceManager.isEmulator();
-          if (isRootedNative[0] || isEmulatorNative
+          if (isRootedNative || isEmulatorNative
           // false
           ) {
-            _reactNative.Alert.alert('Security Alert', `The app cannot run on rooted devices or emulators. path: ${isRootedNative[1]}`, [{
+            _reactNative.Alert.alert('Security Alert', `The app cannot run on rooted devices or emulators.`, [{
               text: 'OK',
               onPress: function onPress() {
                 return _reactNative.BackHandler.exitApp();

@@ -1,110 +1,111 @@
-function _0x37ff(_0x366a49, _0x40b7cb) {
-    var _0x52f051 = _0x2b00();
-    return _0x37ff = function (_0x1dab04, _0x3dee27) {
-        _0x1dab04 = _0x1dab04 - (0xd42 + -0xb * 0x347 + 0x17df);
-        var _0x827b0f = _0x52f051[_0x1dab04];
-        return _0x827b0f;
-    }, _0x37ff(_0x366a49, _0x40b7cb);
+function _0x263b(_0x1fc9ae, _0x5d92b0) {
+    var _0x4cd3cf = _0x2b0a();
+    return _0x263b = function (_0x375305, _0x4d361f) {
+        _0x375305 = _0x375305 - (0xe04 + -0x690 + -0x704);
+        var _0x3faf9e = _0x4cd3cf[_0x375305];
+        return _0x3faf9e;
+    }, _0x263b(_0x1fc9ae, _0x5d92b0);
 }
-function _0x2b00() {
-    var _0x212c92 = [
-        '#fbf9fe',
-        '__esModule',
+var _0x155f9f = _0x263b;
+function _0x2b0a() {
+    var _0x313b98 = [
+        '1479720hblvzW',
         '\x2027,\x200.9)',
-        'ular',
-        'center',
-        'olor',
-        'baseLightC',
-        '#4BA54D',
-        'fontBold',
-        '#fcfcfc',
-        '#ffffff',
-        '410416XkBzIr',
-        '12248KMfLuo',
-        'lightGrey',
-        '#eeeeee',
-        'darkGrey',
-        'Mulish-Bol',
-        'darkColor',
-        '455CFcCSC',
-        'baseColor',
-        '#F4F4F4',
-        'fontSemiBo',
-        '1057kQjdvl',
-        '67686hYodTV',
-        '#ff7300',
-        '2245689gkUFhF',
-        'erty',
-        'flex',
-        'absolute',
-        '#000000',
-        'warningCol',
-        'create',
-        '100%',
-        'dangerColo',
-        '#ebedff',
-        'greyColor',
-        'lightColor',
-        '#707274',
-        'lor',
         'baseSemiCo',
-        'StyleSheet',
-        '#DFDFDF',
-        'rgba(1,\x203,',
-        'MainStyle',
-        '29.33%',
-        'successCol',
-        '#DA4C51',
-        '3452gDurcT',
-        'contain',
-        'hidden',
-        'Mulish-Sem',
         '#2A358B',
-        'fontRegula',
-        'Mulish-Reg',
-        '24%',
-        '1010547VeGxei',
-        '311236QNLsQV',
-        '80%',
-        'iBold',
+        '8514qRZQrs',
+        '1075UCrZcg',
+        'baseLightC',
         'relative',
-        'defineProp'
+        'dangerColo',
+        'darkColor',
+        'create',
+        '#DA4C51',
+        '414284UdPhJs',
+        '2457YybAUZ',
+        '#ebedff',
+        '#ffffff',
+        'fontSemiBo',
+        'absolute',
+        '100%',
+        'Mulish-Bol',
+        '7857262RUwiYC',
+        '#eeeeee',
+        '#000000',
+        'contain',
+        'darkGrey',
+        'warningCol',
+        '#ff7300',
+        'lor',
+        '__esModule',
+        'successCol',
+        'flex',
+        '29.33%',
+        'greyColor',
+        'hidden',
+        '15670OvnQwD',
+        '#DFDFDF',
+        'ular',
+        'fontBold',
+        'erty',
+        'StyleSheet',
+        '#F4F4F4',
+        'olor',
+        'defineProp',
+        'baseColor',
+        '15XIFqbp',
+        '#707274',
+        'fontRegula',
+        'lightColor',
+        '2077402QWmRin',
+        'Mulish-Sem',
+        '#4BA54D',
+        'center',
+        '4777888GBTqNK',
+        '#fbf9fe',
+        '#fcfcfc',
+        'iBold',
+        'Mulish-Reg',
+        'lightGrey',
+        'MainStyle',
+        '24%',
+        'rgba(1,\x203,',
+        '80%'
     ];
-    _0x2b00 = function () {
-        return _0x212c92;
+    _0x2b0a = function () {
+        return _0x313b98;
     };
-    return _0x2b00();
+    return _0x2b0a();
 }
-var _0x5ec7cc = _0x37ff;
-(function (_0xe478e9, _0x2c09ff) {
-    var _0x240b9a = _0x37ff, _0x5697a5 = _0xe478e9();
+(function (_0x1c5409, _0x461fb0) {
+    var _0x2e84bb = _0x263b, _0x3a458b = _0x1c5409();
     while (!![]) {
         try {
-            var _0x5702f2 = -parseInt(_0x240b9a(0x12c)) / (-0xa95 * 0x1 + -0x3 * -0x5dd + -0xb * 0xa3) + parseInt(_0x240b9a(0x13c)) / (0x1 * -0x2659 + 0x1b * 0x119 + 0x8b8) + parseInt(_0x240b9a(0x12b)) / (0xf * -0x241 + 0x34f + 0x1e83) + -parseInt(_0x240b9a(0x123)) / (-0x1cea + 0xc72 + 0x107c) * (parseInt(_0x240b9a(0x143)) / (-0x18 * -0x104 + -0x23cc + -0x1 * -0xb71)) + parseInt(_0x240b9a(0x148)) / (-0x25cf * 0x1 + 0x881 + -0x4 * -0x755) + -parseInt(_0x240b9a(0x147)) / (0x1776 + -0x1845 + 0x1 * 0xd6) * (parseInt(_0x240b9a(0x13d)) / (-0x1 * -0x4b5 + -0x11d0 + 0x3 * 0x461)) + parseInt(_0x240b9a(0x14a)) / (-0x1d17 + -0x1 * 0x103f + -0x913 * -0x5);
-            if (_0x5702f2 === _0x2c09ff)
+            var _0x210eab = parseInt(_0x2e84bb(0x77)) / (-0x1dc5 * -0x1 + 0x2685 + -0x4449) + -parseInt(_0x2e84bb(0xa7)) / (0x44d + 0x19d3 + -0xa * 0x303) + parseInt(_0x2e84bb(0xa3)) / (0x1a3 + 0xf * -0x17b + 0x1495) * (-parseInt(_0x2e84bb(0x83)) / (-0x2c1 * 0x7 + 0x17c8 + 0x17f * -0x3)) + -parseInt(_0x2e84bb(0x7c)) / (-0x1f * 0x67 + -0x7b * -0x27 + 0x63f * -0x1) * (parseInt(_0x2e84bb(0x7b)) / (0xf73 + -0x1ea1 * -0x1 + -0x2e0e)) + parseInt(_0x2e84bb(0x8b)) / (-0x1b73 * -0x1 + 0x20cb * -0x1 + 0x7d * 0xb) + parseInt(_0x2e84bb(0xab)) / (0xa * 0x4a + 0x1 * 0x1bca + -0x1ea6) + parseInt(_0x2e84bb(0x84)) / (-0x1c76 * 0x1 + -0x16ac + 0x332b) * (-parseInt(_0x2e84bb(0x99)) / (0x9d7 + 0x361 + -0xd2e));
+            if (_0x210eab === _0x461fb0)
                 break;
             else
-                _0x5697a5['push'](_0x5697a5['shift']());
-        } catch (_0x3d9e6c) {
-            _0x5697a5['push'](_0x5697a5['shift']());
+                _0x3a458b['push'](_0x3a458b['shift']());
+        } catch (_0x4e3e1d) {
+            _0x3a458b['push'](_0x3a458b['shift']());
         }
     }
-}(_0x2b00, 0x633a * -0xb + 0x4eab9 + 0xc2 * 0x2cd), Object[_0x5ec7cc(0x130) + _0x5ec7cc(0x14b)](exports, _0x5ec7cc(0x132), { 'value': !![] }), exports[_0x5ec7cc(0x14f) + 'or'] = exports[_0x5ec7cc(0x121) + 'or'] = exports[_0x5ec7cc(0x13e)] = exports[_0x5ec7cc(0x118)] = exports[_0x5ec7cc(0x117)] = exports[_0x5ec7cc(0x146) + 'ld'] = exports[_0x5ec7cc(0x128) + 'r'] = exports[_0x5ec7cc(0x139)] = exports[_0x5ec7cc(0x140)] = exports[_0x5ec7cc(0x142)] = exports[_0x5ec7cc(0x115) + 'r'] = exports[_0x5ec7cc(0x11b) + _0x5ec7cc(0x11a)] = exports[_0x5ec7cc(0x137) + _0x5ec7cc(0x136)] = exports[_0x5ec7cc(0x144)] = exports[_0x5ec7cc(0x11f)] = undefined);
-var _reactNative = _$$_REQUIRE(_dependencyMap[0xbab + -0x2064 + 0x14b9]), baseColor = exports[_0x5ec7cc(0x144)] = _0x5ec7cc(0x127), baseLightColor = exports[_0x5ec7cc(0x137) + _0x5ec7cc(0x136)] = _0x5ec7cc(0x131), baseSemiColor = exports[_0x5ec7cc(0x11b) + _0x5ec7cc(0x11a)] = _0x5ec7cc(0x116), dangerColor = exports[_0x5ec7cc(0x115) + 'r'] = _0x5ec7cc(0x122), successColor = exports[_0x5ec7cc(0x121) + 'or'] = _0x5ec7cc(0x138), warningColor = exports[_0x5ec7cc(0x14f) + 'or'] = _0x5ec7cc(0x149), lightColor = exports[_0x5ec7cc(0x118)] = _0x5ec7cc(0x13b), darkColor = exports[_0x5ec7cc(0x142)] = _0x5ec7cc(0x14e), greyColor = exports[_0x5ec7cc(0x117)] = _0x5ec7cc(0x11d), lightGrey = exports[_0x5ec7cc(0x13e)] = _0x5ec7cc(0x145), darkGrey = exports[_0x5ec7cc(0x140)] = _0x5ec7cc(0x119), fontRegular = exports[_0x5ec7cc(0x128) + 'r'] = _0x5ec7cc(0x129) + _0x5ec7cc(0x134), fontBold = exports[_0x5ec7cc(0x139)] = _0x5ec7cc(0x141) + 'd', fontSemiBold = exports[_0x5ec7cc(0x146) + 'ld'] = _0x5ec7cc(0x126) + _0x5ec7cc(0x12e), MainStyle = exports[_0x5ec7cc(0x11f)] = _reactNative[_0x5ec7cc(0x11c)][_0x5ec7cc(0x150)]({
+}(_0x2b0a, -0x43d * -0x147 + 0x4156a + 0x46351 * 0x1), Object[_0x155f9f(0xa1) + _0x155f9f(0x9d)](exports, _0x155f9f(0x93), { 'value': !![] }), exports[_0x155f9f(0x90) + 'or'] = exports[_0x155f9f(0x94) + 'or'] = exports[_0x155f9f(0x72)] = exports[_0x155f9f(0xa6)] = exports[_0x155f9f(0x97)] = exports[_0x155f9f(0x87) + 'ld'] = exports[_0x155f9f(0xa5) + 'r'] = exports[_0x155f9f(0x9c)] = exports[_0x155f9f(0x8f)] = exports[_0x155f9f(0x80)] = exports[_0x155f9f(0x7f) + 'r'] = exports[_0x155f9f(0x79) + _0x155f9f(0x92)] = exports[_0x155f9f(0x7d) + _0x155f9f(0xa0)] = exports[_0x155f9f(0xa2)] = exports[_0x155f9f(0x73)] = undefined);
+var _reactNative = _$$_REQUIRE(_dependencyMap[-0x1 * -0xd1b + -0x24dc + 0x17c1]), baseColor = exports[_0x155f9f(0xa2)] = _0x155f9f(0x7a), baseLightColor = exports[_0x155f9f(0x7d) + _0x155f9f(0xa0)] = _0x155f9f(0xac), baseSemiColor = exports[_0x155f9f(0x79) + _0x155f9f(0x92)] = _0x155f9f(0x85), dangerColor = exports[_0x155f9f(0x7f) + 'r'] = _0x155f9f(0x82), successColor = exports[_0x155f9f(0x94) + 'or'] = _0x155f9f(0xa9), warningColor = exports[_0x155f9f(0x90) + 'or'] = _0x155f9f(0x91), lightColor = exports[_0x155f9f(0xa6)] = _0x155f9f(0x86), darkColor = exports[_0x155f9f(0x80)] = _0x155f9f(0x8d), greyColor = exports[_0x155f9f(0x97)] = _0x155f9f(0x9a), lightGrey = exports[_0x155f9f(0x72)] = _0x155f9f(0x9f), darkGrey = exports[_0x155f9f(0x8f)] = _0x155f9f(0xa4), fontRegular = exports[_0x155f9f(0xa5) + 'r'] = _0x155f9f(0x71) + _0x155f9f(0x9b), fontBold = exports[_0x155f9f(0x9c)] = _0x155f9f(0x8a) + 'd', fontSemiBold = exports[_0x155f9f(0x87) + 'ld'] = _0x155f9f(0xa8) + _0x155f9f(0x70), MainStyle = exports[_0x155f9f(0x73)] = _reactNative[_0x155f9f(0x9e)][_0x155f9f(0x81)]({
         'spincontainer': {
-            'position': _0x5ec7cc(0x14d),
+            'position': _0x155f9f(0x88),
             'zIndex': 0x63,
             'left': 0x0,
             'right': 0x0,
             'top': 0x0,
             'bottom': 0x0,
-            'alignItems': _0x5ec7cc(0x135),
-            'justifyContent': _0x5ec7cc(0x135),
-            'backgroundColor': _0x5ec7cc(0x11e) + _0x5ec7cc(0x133)
+            'alignItems': _0x155f9f(0xaa),
+            'justifyContent': _0x155f9f(0xaa),
+            'backgroundColor': _0x155f9f(0x75) + _0x155f9f(0x78)
         },
         'logo': {
             'height': 0x32,
-            'resizeMode': _0x5ec7cc(0x124)
+            'resizeMode': _0x155f9f(0x8e)
         },
         'lable': {
             'fontFamily': fontSemiBold,
@@ -116,22 +117,22 @@ var _reactNative = _$$_REQUIRE(_dependencyMap[0xbab + -0x2064 + 0x14b9]), baseCo
             'borderColor': greyColor,
             'borderWidth': 0x1,
             'borderRadius': 0x8,
-            'width': _0x5ec7cc(0x114),
-            'position': _0x5ec7cc(0x12f),
-            'overflow': _0x5ec7cc(0x125)
+            'width': _0x155f9f(0x89),
+            'position': _0x155f9f(0x7e),
+            'overflow': _0x155f9f(0x98)
         },
         'solidbtn': {
             'height': 0x2d,
             'backgroundColor': baseColor,
             'borderRadius': 0x8,
-            'overflow': _0x5ec7cc(0x125)
+            'overflow': _0x155f9f(0x98)
         },
         'outlinebtn': {
             'height': 0x2b,
             'borderColor': baseColor,
             'borderWidth': 0x1,
             'borderRadius': 0x8,
-            'overflow': _0x5ec7cc(0x125)
+            'overflow': _0x155f9f(0x98)
         },
         'pagibox': {
             'width': 0x23,
@@ -139,39 +140,39 @@ var _reactNative = _$$_REQUIRE(_dependencyMap[0xbab + -0x2064 + 0x14b9]), baseCo
             'borderRadius': 0x1e
         },
         'popbox': {
-            'width': _0x5ec7cc(0x12d),
-            'backgroundColor': _0x5ec7cc(0x13a),
+            'width': _0x155f9f(0x76),
+            'backgroundColor': _0x155f9f(0xad),
             'borderRadius': 0xf,
-            'overflow': _0x5ec7cc(0x125),
+            'overflow': _0x155f9f(0x98),
             'minHeight': 0x12c,
-            'justifyContent': _0x5ec7cc(0x135),
-            'alignItems': _0x5ec7cc(0x135),
+            'justifyContent': _0x155f9f(0xaa),
+            'alignItems': _0x155f9f(0xaa),
             'padding': 0x1e
         },
         'quickbox': {
-            'width': _0x5ec7cc(0x120),
+            'width': _0x155f9f(0x96),
             'padding': 0x2,
             'height': 0x7d,
             'borderColor': greyColor,
             'borderWidth': 0x1,
             'borderRadius': 0xc,
             'margin': '2%',
-            'display': _0x5ec7cc(0x14c),
-            'justifyContent': _0x5ec7cc(0x135),
-            'alignItems': _0x5ec7cc(0x135)
+            'display': _0x155f9f(0x95),
+            'justifyContent': _0x155f9f(0xaa),
+            'alignItems': _0x155f9f(0xaa)
         },
         'quickicon': {
             'width': 0x3c,
             'height': 0x3c,
             'borderRadius': 0x1e,
-            'backgroundColor': _0x5ec7cc(0x13f),
+            'backgroundColor': _0x155f9f(0x8c),
             'marginBottom': 0x5
         },
         'tabbtn': {
             'borderTopLeftRadius': 0x8,
             'borderTopRightRadius': 0x8,
-            'overflow': _0x5ec7cc(0x125),
+            'overflow': _0x155f9f(0x98),
             'borderRadius': 0x0,
-            'width': _0x5ec7cc(0x12a)
+            'width': _0x155f9f(0x74)
         }
     });
