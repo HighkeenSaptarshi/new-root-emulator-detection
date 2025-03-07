@@ -88,7 +88,9 @@ class SecurityServiceManager(reactContext: ReactApplicationContext) :
 
     @ReactMethod
     fun isDeviceRooted(promise: Promise) {
-        val rooted = checkRootMethod1() || checkRootMethod2() || checkRootMethod3()
+        val isXiaomi = Build.MANUFACTURER.equals("Xiaomi", ignoreCase = true)
+
+        val rooted = checkRootMethod1() || checkRootMethod2() || (!isXiaomi && checkRootMethod3())
 
         promise.resolve(rooted)
     }
@@ -97,7 +99,7 @@ class SecurityServiceManager(reactContext: ReactApplicationContext) :
     fun isEmulator(promise: Promise) {
         val context = getReactApplicationContext()
 
-        val osName = System.getProperty("os.name").lowercase()
+        val osName = System.getProperty("os.name").toLowerCase()
         val isEmulator =
                 (isEmulatorByCpuInfo() ||
                         checkEmulatorFiles() ||
@@ -149,7 +151,18 @@ class SecurityServiceManager(reactContext: ReactApplicationContext) :
                         "/data/local/tmp/frida",
                 )
         for (path in paths) {
-            if (File(path).exists()) return true
+            if (File(path).exists()) {
+                try {
+                    val process = Runtime.getRuntime().exec("su -c whoami")
+                    val reader = BufferedReader(InputStreamReader(process.inputStream))
+                    val output = reader.readLine()
+                    if (output != null && output.contains("root")) {
+                        return true // Actual root access detected
+                    }
+                } catch (e: IOException) {
+                    // No permission, not rooted
+                }
+            }
         }
         return false
     }
@@ -166,6 +179,9 @@ class SecurityServiceManager(reactContext: ReactApplicationContext) :
     }
 
     private fun checkRootMethod3(): Boolean {
+        if (Build.MANUFACTURER.equals("Xiaomi", ignoreCase = true)) {
+            return false // Ignore test-keys for MIUI devices
+        }
         return Build.TAGS?.contains("test-keys") == true
     }
 
