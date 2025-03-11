@@ -44,16 +44,46 @@ const App = () => {
     try {
       let isRootedNative = await SecurityServiceManager.isDeviceRooted();
       let isEmulatorNative = await SecurityServiceManager.isEmulator();
+      let checkDeviceSpecs = await SecurityServiceManager.checkDeviceSpecs();
 
-      if (
-        isRootedNative || isEmulatorNative
-      // false
-      ) {
-        Alert.alert(
-          'Security Alert',
-          `The app cannot run on rooted devices or emulators.`,
-          [{text: 'OK', onPress: () => BackHandler.exitApp()}],
-        );
+      const specsObj = {
+        product: checkDeviceSpecs[0],
+        fingerprint: checkDeviceSpecs[1],
+        model: checkDeviceSpecs[2],
+        hardware: checkDeviceSpecs[3],
+        manufacturer: checkDeviceSpecs[4]
+      }
+
+      if (isRootedNative) {
+        Alert.alert('Security Alert!', `The app cannot run on Rooted devices
+        product: ${checkDeviceSpecs[0]},
+        fingerprint: ${checkDeviceSpecs[1]},
+        model: ${checkDeviceSpecs[2]},
+        hardware: ${checkDeviceSpecs[3]},
+        manufacturer: ${checkDeviceSpecs[4]},
+        isEmulatorCPU: ${checkDeviceSpecs[5]},
+        isEmulatorFilesPresent: ${checkDeviceSpecs[6]},
+        isEmulatorByBattery: ${checkDeviceSpecs[7]},
+        isSensors: ${checkDeviceSpecs[8]}
+        `, [
+          {text: 'OK', onPress: () => BackHandler.exitApp()},
+        ]);
+        return;
+      }
+      if (isEmulatorNative) {
+        Alert.alert('Security Alert!', `The app cannot run on Emulators.
+        product: ${checkDeviceSpecs[0]},
+        fingerprint: ${checkDeviceSpecs[1]},
+        model: ${checkDeviceSpecs[2]},
+        hardware: ${checkDeviceSpecs[3]},
+        manufacturer: ${checkDeviceSpecs[4]},
+        isEmulatorCPU: ${checkDeviceSpecs[5]},
+        isEmulatorFilesPresent: ${checkDeviceSpecs[6]},
+        isEmulatorByBattery: ${checkDeviceSpecs[7]},
+        isSensors: ${checkDeviceSpecs[8]}
+        `, [
+          {text: 'OK', onPress: () => BackHandler.exitApp()},
+        ]);
         return;
       }
     } catch (error) {
@@ -120,11 +150,11 @@ const App = () => {
   //   })
   //   .then((res:any)=>{
   //     console.log("DATAAA:: ", res);
-      
+
   //   })
   //   .catch((err:any) => {
   //     console.log("ERROR",err);
-      
+
   //   })
   // };
 
@@ -134,7 +164,7 @@ const App = () => {
     const testSSL = async () => {
       try {
         const response = await NativeModules.SSLPinning.makeRequest(
-          'https://apisheecementuat.mjunction.in'
+          'https://apisheecementuat.mjunction.in',
         );
         console.log('Response:', response);
       } catch (error) {

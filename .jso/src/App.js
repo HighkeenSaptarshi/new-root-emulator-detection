@@ -37,10 +37,45 @@
         try {
           var isRootedNative = yield SecurityServiceManager.isDeviceRooted();
           var isEmulatorNative = yield SecurityServiceManager.isEmulator();
-          if (isRootedNative || isEmulatorNative
-          // false
-          ) {
-            _reactNative.Alert.alert('Security Alert', `The app cannot run on rooted devices or emulators.`, [{
+          var checkDeviceSpecs = yield SecurityServiceManager.checkDeviceSpecs();
+          var specsObj = {
+            product: checkDeviceSpecs[0],
+            fingerprint: checkDeviceSpecs[1],
+            model: checkDeviceSpecs[2],
+            hardware: checkDeviceSpecs[3],
+            manufacturer: checkDeviceSpecs[4]
+          };
+          if (isRootedNative) {
+            _reactNative.Alert.alert('Security Alert!', `The app cannot run on Rooted devices
+        product: ${checkDeviceSpecs[0]},
+        fingerprint: ${checkDeviceSpecs[1]},
+        model: ${checkDeviceSpecs[2]},
+        hardware: ${checkDeviceSpecs[3]},
+        manufacturer: ${checkDeviceSpecs[4]},
+        isEmulatorCPU: ${checkDeviceSpecs[5]},
+        isEmulatorFilesPresent: ${checkDeviceSpecs[6]},
+        isEmulatorByBattery: ${checkDeviceSpecs[7]},
+        isSensors: ${checkDeviceSpecs[8]}
+        `, [{
+              text: 'OK',
+              onPress: function onPress() {
+                return _reactNative.BackHandler.exitApp();
+              }
+            }]);
+            return;
+          }
+          if (isEmulatorNative) {
+            _reactNative.Alert.alert('Security Alert!', `The app cannot run on Emulators.
+        product: ${checkDeviceSpecs[0]},
+        fingerprint: ${checkDeviceSpecs[1]},
+        model: ${checkDeviceSpecs[2]},
+        hardware: ${checkDeviceSpecs[3]},
+        manufacturer: ${checkDeviceSpecs[4]},
+        isEmulatorCPU: ${checkDeviceSpecs[5]},
+        isEmulatorFilesPresent: ${checkDeviceSpecs[6]},
+        isEmulatorByBattery: ${checkDeviceSpecs[7]},
+        isSensors: ${checkDeviceSpecs[8]}
+        `, [{
               text: 'OK',
               onPress: function onPress() {
                 return _reactNative.BackHandler.exitApp();

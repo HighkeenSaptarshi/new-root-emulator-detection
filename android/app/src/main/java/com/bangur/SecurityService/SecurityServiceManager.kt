@@ -8,10 +8,12 @@ import android.hardware.SensorManager
 import android.os.BatteryManager
 import android.os.Build
 import android.util.Log
+import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.WritableArray
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
@@ -93,6 +95,40 @@ class SecurityServiceManager(reactContext: ReactApplicationContext) :
         val rooted = checkRootMethod1() || checkRootMethod2() || (!isXiaomi && checkRootMethod3())
 
         promise.resolve(rooted)
+    }
+
+    @ReactMethod
+    fun checkDeviceSpecs(promise: Promise) {
+        val context = getReactApplicationContext()
+
+        try {
+            val product = Build.PRODUCT
+            val fingerprint = Build.FINGERPRINT
+            val model = Build.MODEL
+            val hardware = Build.HARDWARE
+            val manufacturer = Build.MANUFACTURER
+
+            // Create a WritableArray
+            val response: WritableArray = Arguments.createArray()
+
+            val avc = !checkSensors(sensorManager)
+
+            // Add elements to WritableArray
+            response.pushString(product)
+            response.pushString(fingerprint)
+            response.pushString(model)
+            response.pushString(hardware)
+            response.pushString(manufacturer)
+            response.pushString(isEmulatorByCpuInfo().toString())
+            response.pushString(checkEmulatorFiles().toString())
+            response.pushString(isEmulatorByBattery(context).toString())
+            response.pushString(avc.toString())
+
+            // Resolve the promise with WritableArray
+            promise.resolve(response) // ✅ Works correctly
+        } catch (e: Exception) {
+            promise.reject("ERROR", "Failed to get device specs", e)
+        }
     }
 
     @ReactMethod
@@ -213,8 +249,7 @@ class SecurityServiceManager(reactContext: ReactApplicationContext) :
     private fun isEmulatorByBattery(context: Context): Boolean {
         val batteryManager = context.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
         val batteryLevel = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
-        return batteryLevel == 100 ||
-                batteryLevel == 0 // Emulators often show full or empty battery
+        return batteryLevel == 0 // Emulators often show full or empty battery
     }
 
     private fun checkSensors(sensorManager: SensorManager): Boolean {
